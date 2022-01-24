@@ -13,14 +13,14 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import java.util.List;
 
 /**
- * @author youyihj
+ * @author youyihj & WuzgXY
  */
 @Mod.EventBusSubscriber
 public class TooltipEventHandler {
     public static final Locale EN_US = new Locale();
 
     static {
-        EN_US.loadLocaleDataFiles(Minecraft.getMinecraft().getResourceManager(), Lists.newArrayList("en_us"));
+        EN_US.loadLocaleDataFiles(Minecraft.getMinecraft().getResourceManager(), Lists.newArrayList("zh_cn"));
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
@@ -30,7 +30,7 @@ public class TooltipEventHandler {
         List<String> tooltip = event.getToolTip();
         String key = Util.tryFindingKey(EN_US, stack);
         if (key.isEmpty()) return;
-        String localizedName = TextFormatting.GREEN + EN_US.formatMessage(key, new Object[0]);
+        String localizedName = TextFormatting.WHITE + EN_US.formatMessage(key, new Object[0]);
         tooltip.add(localizedName);
     }
 }
