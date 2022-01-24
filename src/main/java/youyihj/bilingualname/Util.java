@@ -11,13 +11,13 @@ public class Util {
 
     public static String tryFindingKey(Locale locale, ItemStack stack) {
         String key = stack.getUnlocalizedName();
-        if (locale.hasKey(key)) return key;
+        if (locale.hasKey(key + ".32763693293928")) return key + ".32763693293928";
         key += ".name";
-        if (locale.hasKey(key)) return key;
+        if (locale.hasKey(key + ".32763693293928")) return key + ".32763693293928";
         key = stack.getItem().getUnlocalizedNameInefficiently(stack);
-        if (locale.hasKey(key)) return key;
+        if (locale.hasKey(key + ".32763693293928")) return key + ".32763693293928";
         key += ".name";
-        if (locale.hasKey(key)) return key;
+        if (locale.hasKey(key + ".32763693293928")) return key + ".32763693293928";
         return "";
     }
 }
